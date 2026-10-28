@@ -1,0 +1,142 @@
+{
+ "status": 0,
+ "data": {
+  "geo": "cn",
+  "userIp": "183.250.230.8",
+  "configVersion": 11,
+  "configHy2": "server: @HY2_SERVER\n\nauth: @HY2_AUTH\n\ntls:\n  sni: @HY2_DOMAIN\n  insecure: true\n\ncongestion:\n  type: bbr\n  bbrProfile: standard\n\nsocks5:\n  listen: 127.0.0.1:@SOCKS_PORT\n  blockQuic: true\n  MaxDiscardPeriod: 15s\n\nfastOpen: true\n\nquic:\n  maxIdleTimeout: 20s\n  keepAlivePeriod: 5s\n  disablePathMTUDiscovery: true\n",
+  "configTun": "tunnel:\n  # Interface name\n  name: tun0\n  # Interface MTU\n  mtu: 1500\n  # Multi-queue\n  multi-queue: false\n  # IPv4 address\n  ipv4: 10.0.88.88\n  # IPv6 address\n  ipv6: 'fc00::1'\n\nsocks5:\n  # Socks5 server port\n  port: @SOCKS_PORT\n  # Socks5 server address (ipv4/ipv6)\n  address: 127.0.0.1\n  # Socks5 UDP relay mode (tcp|udp)\n  udp: 'udp'\n\nmisc:\n  max-session-count: 1800\n  limit-nofile: 65535\n",
+  "user": {
+   "username": "supro_f981c3c8…",
+   "password": "********",
+   "channel": "play",
+   "alias": "supro",
+   "loginType": 0,
+   "vipType": 0,
+   "vipRemainSec": 0,
+   "vipEndSec": 0,
+   "sessionTime": 43200,
+   "dataTimeSec": 1793199632
+  },
+  "gateways": [
+   {
+    "ip": "185.165.242.107",
+    "location": "nl",
+    "cert": "-----BEGIN CERTIFICATE-----\\n<truncated, real cert is 1159 bytes>\\n-----END CERTIFICATE-----",
+    "port": 14163,
+    "psk": "********",
+    "gwType": 0,
+    "order": 3,
+    "config": {}
+   },
+   {
+    "ip": "66.93.128.140",
+    "location": "nl",
+    "cert": "-----BEGIN CERTIFICATE-----\\n<truncated, real cert is 1159 bytes>\\n-----END CERTIFICATE-----",
+    "port": 53960,
+    "psk": "********",
+    "gwType": 0,
+    "order": 3,
+    "config": {}
+   },
+   {
+    "ip": "51.158.240.119",
+    "location": "nl",
+    "cert": "-----BEGIN CERTIFICATE-----\\n<truncated, real cert is 1159 bytes>\\n-----END CERTIFICATE-----",
+    "port": 52734,
+    "psk": "********",
+    "gwType": 0,
+    "order": 3,
+    "config": {}
+   }
+  ],
+  "gateways_note": "本例仅保留前 3 条，实际一次 1-8 条",
+  "relayGateways": [],
+  "tcpGateways": [
+   {
+    "ip": "51.255.60.68",
+    "location": "fr",
+    "cert": "none",
+    "port": 54496,
+    "psk": "********",
+    "gwType": 2,
+    "order": 10,
+    "config": {}
+   },
+   {
+    "ip": "91.134.80.8",
+    "location": "fr",
+    "cert": "none",
+    "port": 52013,
+    "psk": "********",
+    "gwType": 2,
+    "order": 10,
+    "config": {}
+   },
+   {
+    "ip": "51.159.163.211",
+    "location": "fr",
+    "cert": "none",
+    "port": 3262,
+    "psk": "********",
+    "gwType": 2,
+    "order": 10,
+    "config": {}
+   }
+  ],
+  "tcpGateways_note": "本例仅保留前 3 条，实际一次 1-8 条",
+  "hy2Gateways": [
+   {
+    "ip": "74.208.18.60",
+    "location": "us",
+    "cert": "none",
+    "port": 443,
+    "gwType": 4,
+    "order": 5,
+    "config": {
+     "@HY2_AUTH": "supro_f981c3…:********@<unix_ts>@<md5>",
+     "@HY2_DOMAIN": "centos.org",
+     "@HY2_PORT": "443",
+     "@SOCKS_PORT": "2878",
+     "@HY2_SERVER": "74.208.18.60:443",
+     "@HY2_IP": "74.208.18.60"
+    }
+   },
+   {
+    "ip": "51.159.170.3",
+    "location": "fr",
+    "cert": "none",
+    "port": 443,
+    "psk": "********",
+    "gwType": 4,
+    "order": 5,
+    "config": {
+     "@HY2_AUTH": "supro_f981c3…:********@<unix_ts>@<md5>",
+     "@HY2_DOMAIN": "nextjs.org",
+     "@HY2_PORT": "443",
+     "@SOCKS_PORT": "2089",
+     "@HY2_SERVER": "51.159.170.3:443",
+     "@HY2_IP": "51.159.170.3"
+    }
+   },
+   {
+    "ip": "51.158.126.89",
+    "location": "fr",
+    "cert": "none",
+    "port": 443,
+    "psk": "********",
+    "gwType": 4,
+    "order": 5,
+    "config": {
+     "@HY2_AUTH": "supro_f981c3…:********@<unix_ts>@<md5>",
+     "@HY2_DOMAIN": "nginx.org",
+     "@HY2_PORT": "443",
+     "@SOCKS_PORT": "2758",
+     "@HY2_SERVER": "51.158.126.89:443",
+     "@HY2_IP": "51.158.126.89"
+    }
+   }
+  ],
+  "hy2Gateways_note": "本例仅保留前 3 条，实际一次 1-8 条"
+ }
+}

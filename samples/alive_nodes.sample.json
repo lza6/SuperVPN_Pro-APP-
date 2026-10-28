@@ -1,0 +1,43 @@
+{
+ "note": "样例结构。真实 auth 有效期 12h，需自行 acquire 生成；每条 auth 形如 user:pass@<unix_ts>@<md5>",
+ "tested_at": "2026-10-29 00:21:05",
+ "total_alive_that_round": 51,
+ "nodes": [
+  {
+   "ip": "107.151.199.152",
+   "port": 443,
+   "location": "us",
+   "sni": "debian.org",
+   "auth_masked": "supro_9bdd5b…:********@<unix_ts>@<md5>",
+   "rtt_ms": 870,
+   "egress_ip": "107.151.199.152",
+   "egress_country": "US",
+   "egress_isp": "zenlayer.inc",
+   "socks_port": 45000
+  },
+  {
+   "ip": "107.151.195.122",
+   "port": 443,
+   "location": "us",
+   "sni": "curl.se",
+   "auth_masked": "supro_9bdd5b…:********@<unix_ts>@<md5>",
+   "rtt_ms": 1042,
+   "egress_ip": "107.151.195.122",
+   "egress_country": "US",
+   "egress_isp": "VpsQuan L.L.C.",
+   "socks_port": 45001
+  },
+  {
+   "ip": "158.51.123.197",
+   "port": 443,
+   "location": "ca",
+   "sni": "fedoraproject.org",
+   "auth_masked": "supro_9bdd5b…:********@<unix_ts>@<md5>",
+   "rtt_ms": 1176,
+   "egress_ip": "158.51.123.197",
+   "egress_country": "CA",
+   "egress_isp": "GLOBALTELEHOST Corp.",
+   "socks_port": 45002
+  }
+ ]
+}

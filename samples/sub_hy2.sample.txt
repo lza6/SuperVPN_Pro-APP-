@@ -1,0 +1,4 @@
+# 格式样例（凭证已脱敏）。hysteria2 URI 的 auth 含 : 和 @，必须整体 percent-encode
+hysteria2://supro_9bdd5b%E2%80%A6%3A%2A%2A%2A%2A%2A%2A%2A%2A%40%3Cunix_ts%3E%40%3Cmd5%3E@107.151.199.152:443/?sni=debian.org&insecure=1#SVPN-US-107_151_199_152
+hysteria2://supro_9bdd5b%E2%80%A6%3A%2A%2A%2A%2A%2A%2A%2A%2A%40%3Cunix_ts%3E%40%3Cmd5%3E@107.151.195.122:443/?sni=curl.se&insecure=1#SVPN-US-107_151_195_122
+hysteria2://supro_9bdd5b%E2%80%A6%3A%2A%2A%2A%2A%2A%2A%2A%2A%40%3Cunix_ts%3E%40%3Cmd5%3E@158.51.123.197:443/?sni=fedoraproject.org&insecure=1#SVPN-CA-158_51_123_197
