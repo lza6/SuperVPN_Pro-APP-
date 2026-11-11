@@ -31,6 +31,18 @@
 
 ---
 
+## 姊妹产品：3.1.9 免费版（`com.jrzheng.supervpnfree`）
+
+同厂商免费线，协议**同源但换成明文 form**：`www.supervpn.best/api/*.json`，
+`secret = md5(username + deviceId + "2y6w498L2I")` —— **salt 与付费版完全相同**。
+
+免密注册即可取节点：12 地区 / 96 条 gateway / **94 个唯一 IP**，全部 `gwType=0`（IKEv2/IPSec，
+随机高位端口 + PSK + 自签证书）。复现：`python tools/harvest_319.py`。
+
+细节与「为什么还不能直接入池」见 [`docs/V319_FREE_EDITION.md`](docs/V319_FREE_EDITION.md)。
+
+---
+
 ## 协议速查（三句话）
 
 1. **网关**：`kkio778.pages.dev` 等三源返回网关 IP 列表，DoH `getip.supervpn.cc` 兜底。
