@@ -92,3 +92,15 @@ new-api → socks5://127.0.0.1:P → tun2socks → tun → strongswan charon →
 - `dex` 里 `com.supersoft.supervpnfree.*` 的 `class_defs` 全部缺失，只有字符串池残留
 
 **所以本文的协议不是逆出来的，是拿 2.0.9 的协议直接打通的**（salt 复用是运气，也是同一家厂商的工程惯性）。
+
+
+---
+
+## 8. 2026-11-13 复测（apk4free VIP 样本 = HEROMODS 同 md5）
+
+- 新鲜 103 条网关（84 PSK / 19 cert），两日重叠仅 1 → **端口池每日全量轮换**
+- IKE 全协议探测（ike-scan v1/v2/aggressive + charon-cmd + swanctl eap-mschapv2）0 响应
+- 网关 TCP 全关、无 PTR、ICMP 丢
+- APK 客户端 profile 枚举无 `ikev2-psk`，实际走 `ikev2-byod-eap`（eap-identity + mschapv2/md5/gtc）
+- **结论**：本机直连建不了 IKEv2 SA；要出可用代理仍走 2.0.9 hy2 线。
+  3.1.9 的价值 = 免费账号无限续 + 协议研究样本。

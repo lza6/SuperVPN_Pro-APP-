@@ -183,3 +183,18 @@ OK  158.51.123.139  CA  模拟器出口=158.51.123.139
 ## License
 
 MIT（见 [LICENSE](LICENSE)）
+
+
+---
+
+## 2026-11-13 · 3.1.9 免费版第一轮压测（apk4free VIP 样本复核）
+
+- 样本 `SuperVPN_v3.1.9_VIP-apk4free.net.apk` 与 HEROMODS 版 **md5 相同**（`2b64ea42abe75d8dae767af270ec1b7b`），同一重打包二进制。
+- 新鲜注册 → 12 地区 → **103 条 IKEv2 网关**（84 PSK 组 + 19 证书组），PSK 全局共享 `88Oqer5Nep`，证书 CN=`geckovpn`；端口池每日轮换（与 11-11 重叠仅 1）。
+- **IKE 建连全静默（0/84）**：ike-scan v1/v2/aggressive、charon-cmd、swanctl(eap-mschapv2) 全部无响应；网关 TCP 全关、ICMP 丢。判定：网关疑似源 IP 白名单或已下线，**本机无法直接建 SA 入池**；APK 内客户端走 `ikev2-byod-eap` 系（strongSwan 5.9.2）。
+- 后端 `supervpn.best` 走 Cloudflare，本机出口对其边缘 IP 间歇性超时——harvest 脚本需带重试。
+- demo 看板（3.1.9 专用）：`tools/demo_server_319.py` → `http://127.0.0.1:8931`，截图见 `screenshots/demo_319.png`。
+- 详见 [`docs/ROUND1_LOADTEST_20261113.md`](docs/ROUND1_LOADTEST_20261113.md)。
+
+> 3.1.9 免费线的现实结论：**协议全通、节点拿得到，但 IKEv2 出口本机建不了 SA**。
+> 要可用出口请用 2.0.9 付费线的 Hysteria2 池（本仓库主线）。
