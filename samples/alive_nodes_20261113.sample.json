@@ -1,0 +1,52 @@
+{
+ "tested_at": "2026-11-13 10:28:59",
+ "summary": {
+  "total_harvested": 87,
+  "alive": 64,
+  "verified_exits": 63,
+  "countries": {
+   "US": 2,
+   "CA": 5,
+   "FR": 13,
+   "GB": 13,
+   "NL": 12,
+   "DE": 12,
+   "IT": 1,
+   "SG": 3,
+   "IN": 2,
+   "PL": 1
+  }
+ },
+ "sample_nodes": [
+  {
+   "ip": "x.x.x.x",
+   "port": 443,
+   "location": "us",
+   "sni": "visualstudio.com",
+   "auth": "<AUTH_REDACTED>",
+   "egress_country": "US",
+   "egress_isp": "zenlayer.inc",
+   "rtt_ms": 960
+  },
+  {
+   "ip": "x.x.x.x",
+   "port": 443,
+   "location": "ca",
+   "sni": "redis.io",
+   "auth": "<AUTH_REDACTED>",
+   "egress_country": "CA",
+   "egress_isp": "GLOBALTELEHOST Corp.",
+   "rtt_ms": 970
+  },
+  {
+   "ip": "x.x.x.x",
+   "port": 443,
+   "location": "us",
+   "sni": "go.dev",
+   "auth": "<AUTH_REDACTED>",
+   "egress_country": "US",
+   "egress_isp": "VpsQuan L.L.C.",
+   "rtt_ms": 986
+  }
+ ]
+}

@@ -114,3 +114,37 @@ python -c "import urllib.parse,sys; [urllib.parse.urlparse(l.strip()) for l in o
 - 节点属 SuperVPN 运营方租用的生产服务器，凭证能取到 ≠ 有使用权；
 - 不得作为对外售卖/计费的代理来源；
 - 线上池要 SLA 请用自有 VPS 或 VPNGate 等公开志愿源。
+
+---
+
+## 5. 2026-11-13 晚间更新：hy2 池重新收割成功（63/64 实测真实出口）
+
+当天全池体检发现 11-12 采的节点已全部衰减（各池出口回落本机 IP），当场重跑 2.0.9 线：
+
+```
+1 轮 12 地区 → 87 hy2 端点 → 当轮测活 64 存活 → mihomo 起池 44000-44063
+批量 socks5h 实测 63/64 出口 IP == 节点 IP
+分布: FR13 GB13 NL12 DE11 CA5 SG3 US2 IN2 PL1 IT1
+```
+
+对接会话直接可用：
+- 池文件 `proxies_newapi_ready.txt`（64 行 `socks5h://127.0.0.1:440xx`）
+- 刷新 = 重跑 `harvest.py → harvest_test.py 1 → emit_proxy_file.py`（需 `MIHOMO_BIN` 指向 mihomo.exe）+ 重启池实例 + `ReloadProxyPool`
+
+### 5.1 必须用 `socks5h://`（本轮实证，不是建议）
+
+测试时 64 个 listener 用 `socks5://` 测**全部显示回落本机 IP**，差点误判池全死。
+真因：`socks5://` 本地解析域名，解析出的 IP 交给 mihomo 后命中 `MATCH,DIRECT` 直连。
+换成 `socks5h://`（远端解析）后 **63/64 出口全是节点真实 IP**。
+
+**规则：测活脚本、new-api 池文件、一切消费端，一律 `socks5h://`。**
+
+### 5.2 池实例运行参数（复现用）
+
+| 项 | 值 |
+|---|---|
+| 配置 | `recon/pool/config_fresh.yaml`（mode=rule + listeners[].proxy 逐节点绑定） |
+| mihomo | v1.19.12（`MIHOMO_BIN` 指定路径） |
+| controller | `127.0.0.1:19098`（19099 常被其他实例占用） |
+| 节点名 | 同名节点加 `-2/-3` 后缀去重，否则 `duplicate name` 起不来 |
+| 凭证寿命 | 12h → 6h 刷新一次 |
